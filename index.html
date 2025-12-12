@@ -95,27 +95,20 @@
                <h3>THE FOUNDERS</h3>
                <div class="founders-grid">
                    <div class="founder-card">
-                       <img src="fabian.jpeg" alt="Fabian" class="founder-photo">
-                       <h4>Fabian</h4>
-                       <p>Co-Founder</p>
+                       <img src="fabi.png" alt="Fabian" class="founder-photo">
+                       <h4>Fabian</h4><p>Co-Founder</p>
                    </div>
-
                    <div class="founder-card">
-                       <img src="joel.jpeg" alt="Joel" class="founder-photo">
-                       <h4>Joel</h4>
-                       <p>Co-Founder</p>
+                       <img src="joel.jpg" alt="Joel" class="founder-photo">
+                       <h4>Joel</h4><p>Co-Founder</p>
                    </div>
-
                    <div class="founder-card">
-                       <img src="dad.jpeg" alt="Joerg" class="founder-photo">
-                       <h4>Joerg</h4>
-                       <p>Co-Founder</p>
+                       <img src="dad.jpg" alt="Joerg" class="founder-photo">
+                       <h4>Joerg</h4><p>Co-Founder</p>
                    </div>
-
                    <div class="founder-card">
                        <img src="timo.jpeg" alt="Timo" class="founder-photo">
-                       <h4>Timo</h4>
-                       <p>Co-Founder</p>
+                       <h4>Timo</h4><p>Co-Founder</p>
                    </div>
                </div>
             </div>
@@ -212,7 +205,7 @@
             if (event.target == modal) closeMapModal();
         }
 
-        // --- ELEVATION LOGIC WITH SPRING PHYSICS ---
+        // --- ELEVATION LOGIC ---
         const maxAltitude = 3000;
         const trackHeight = 400; 
         const tension = 0.08;
@@ -260,9 +253,7 @@
             const moveDistance = smoothPercent * (trackHeight - 20); 
             document.getElementById('scroll-indicator').style.transform = `translateY(${moveDistance}px)`;
         }
-        
         animate();
     </script>
 </body>
-
 </html>
