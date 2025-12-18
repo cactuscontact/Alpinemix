@@ -1,4 +1,4 @@
-/* --- Variables (Syntax Fixed) --- */
+/* --- Variables --- */
 :root {
     --cream-bg: #F4EADD;
     --cream-darker: #e8decf;
@@ -57,25 +57,19 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     display: inline-block; border-bottom: 4px solid var(--orange-accent);
 }
 
-/* --- SHOP (UPDATED FOR SINGLE PHOTO) --- */
+/* --- SHOP --- */
 .shop-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; text-align: left; align-items: center; }
-
-/* Changed max-width from 700px to 500px for better balance with a single image */
+/* Single image styling */
 .shop-images { flex: 1; min-width: 300px; max-width: 500px; display: flex; justify-content: center; }
-
 .dual-shop-img {
-    width: 100%; /* Changed from 50% to 100% */
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px; /* Added rounded corners */
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2); /* Added shadow for depth */
+    width: 100%; height: auto; object-fit: cover;
+    border-radius: 20px; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
 }
-
 .shop-details { flex: 1; min-width: 300px; max-width: 500px; }
-/* ... rest of CSS remains the same ... */
 .product-title { font-size: 2.5rem; color: var(--orange-accent); margin-bottom: 10px; }
 .product-desc { margin-bottom: 30px; font-size: 1.1rem; }
 
+/* Pack Selector */
 .pack-selector { margin-bottom: 30px; }
 .selector-label { font-weight: bold; display: block; margin-bottom: 10px; font-family: 'Oswald'; }
 .pack-options { display: flex; gap: 15px; }
@@ -83,8 +77,14 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     flex: 1; background: transparent; border: 3px solid var(--brown-dark); padding: 15px;
     border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: center;
 }
+/* Active State for Buttons */
+.pack-btn.active { 
+    background-color: var(--brown-dark); 
+    color: var(--cream-bg); 
+    border-color: var(--brown-dark);
+    transform: scale(1.02); /* Slight pop */
+}
 .pack-btn:hover { border-color: var(--orange-accent); }
-.pack-btn.active { background-color: var(--brown-dark); color: var(--cream-bg); border-color: var(--brown-dark); }
 .pack-size { display: block; font-family: 'Oswald'; font-weight: bold; font-size: 1.2rem; }
 .pack-price { display: block; font-size: 1rem; opacity: 0.9; }
 
@@ -205,9 +205,18 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
 .alt-main { color: var(--orange-accent); font-size: 1.5rem; text-shadow: 2px 2px 0px var(--white); z-index: 2; }
 .alt-dark { color: #a05025; opacity: 0.6; font-size: 1.1rem; }
 
+/* --- MODAL --- */
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 20000; justify-content: center; align-items: center; }
 .modal-content { background-color: white; width: 90%; max-width: 800px; padding: 20px; border-radius: 10px; position: relative; }
-.close-modal { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; }
+
+/* Improved Close Button */
+.close-modal { 
+    position: absolute; top: 10px; right: 20px; 
+    font-size: 40px; font-weight: bold; color: #333; /* Dark color to be visible */
+    cursor: pointer; z-index: 20001; 
+}
+.close-modal:hover { color: red; }
+
 #leaflet-map-container { height: 400px; width: 100%; border-radius: 8px; border: 2px solid var(--brown-dark); }
 
 @media (max-width: 768px) {
@@ -224,4 +233,3 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
     .hero-title-img { transform: none; width: 90%; }
     .elevation-container, .section-mountain-bg, .contact-illustrations { display: none; }
 }
-
