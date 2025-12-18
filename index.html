@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpine Cola | The Peak of Refreshment</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -15,7 +15,7 @@
         <div class="nav-links">
             <a href="#" class="nav-link"><img src="texthome (1).png" alt="Home"></a>
             <a href="#product-section" class="nav-link"><img src="textproducts (1).png" alt="Products"></a>
-            <a href="#about-section" class="nav-link"><img src="textaboutus (1).png" alt="About Us"></a>
+            <a href="#about-section" class="nav-link"><img src="textaboutus (1).png" alt="Our Story"></a>
             <a href="#contact-section" class="nav-link"><img src="textcontact (1).png" alt="Contact"></a>
         </div>
     </nav>
@@ -42,14 +42,8 @@
                 <div class="pack-selector">
                     <span class="selector-label">Choose Quantity:</span>
                     <div class="pack-options">
-                        <button class="pack-btn active" onclick="selectPack(this)">
-                            <span class="pack-size">6 PACK</span>
-                            <span class="pack-price">$14.00</span>
-                        </button>
-                        <button class="pack-btn" onclick="selectPack(this)">
-                            <span class="pack-size">12 PACK</span>
-                            <span class="pack-price">$26.00</span>
-                        </button>
+                        <button class="pack-btn active"><span class="pack-size">6 PACK</span><span class="pack-price">$14.00</span></button>
+                        <button class="pack-btn"><span class="pack-size">12 PACK</span><span class="pack-price">$26.00</span></button>
                     </div>
                 </div>
 
@@ -72,7 +66,7 @@
             <div class="our-story">
                 <div class="story-text-wrapper">
                     <h3>OUR STORY</h3>
-                    <p>Alpine Mix was founded by brothers Fabian and Joel Lerner, their father Joerg, and their cousin Timo Lerner. Originally from Germany, we grew up with and fell in love with the classic taste of Spezi—a refreshing blend of cola and orange. We made it our mission to bring that distinctive, thirst-quenching experience home to Vancouver.</p>
+                    <p>Alpine Mix was founded by brothers Fabian and Joel Lerner, their father Joerg, and their cousin Timo Lerner. Originally from Germany, we grew up with and fell in love with the classic taste of Spezi—a refreshing blend of cola and orange. We couldn't find anything that matched that nostalgic flavor here, so we made it our mission to bring that distinctive, thirst-quenching experience home to Vancouver.</p>
                 </div>
             </div>
 
@@ -141,31 +135,12 @@
     <div id="delivery-modal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal" onclick="closeMapModal()">&times;</span>
-            
-            <h2 class="modal-title">Free Delivery Zone</h2>
-            <p class="modal-desc">We offer free personal delivery within 5km of Downtown Vancouver.</p>
-            
             <div id="leaflet-map-container"></div>
-            
-            <button onclick="closeMapModal()" style="margin-top: 15px; padding: 10px 20px; background: var(--brown-dark); color: white; border: none; border-radius: 5px; cursor: pointer;">Close Map</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // --- PACK SELECTOR LOGIC ---
-        function selectPack(btn) {
-            // 1. Remove 'active' class from all pack buttons
-            const buttons = document.querySelectorAll('.pack-btn');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // 2. Add 'active' class to the clicked button
-            btn.classList.add('active');
-        }
-
-        // --- MAP LOGIC ---
         let map;
         function openMapModal() {
             document.getElementById('delivery-modal').style.display = 'flex';
@@ -178,14 +153,7 @@
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
             L.circle([49.2827, -123.1207], { color: '#2ecc71', radius: 5000 }).addTo(map);
         }
-        
-        // Close modal if clicking outside the white box
-        window.onclick = function(event) {
-            const modal = document.getElementById('delivery-modal');
-            if (event.target == modal) closeMapModal();
-        }
 
-        // --- ELEVATION LOGIC ---
         const maxAltitude = 3000;
         const trackHeight = 400; 
         const tension = 0.08, friction = 0.75;
