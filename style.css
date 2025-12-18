@@ -34,7 +34,7 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 .dual-shop-img {
     width: 100%; height: auto; object-fit: cover;
     border-radius: 20px; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-    transform: translateX(-30px); /* SHIFT TO LEFT */
+    transform: translateX(-70px); /* SHIFT TO LEFT */
 }
 .shop-details { max-width: 500px; flex: 1; }
 .product-title { font-size: 2.5rem; color: var(--orange-accent); margin-bottom: 10px; }
@@ -90,3 +90,4 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     .founders-grid { grid-template-columns: repeat(2, 1fr); }
     .elevation-container, .section-mountain-bg, .contact-illustrations { display: none; }
 }
+
