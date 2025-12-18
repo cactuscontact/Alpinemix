@@ -69,6 +69,7 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 .product-title { font-size: 2.5rem; color: var(--orange-accent); margin-bottom: 10px; }
 .product-desc { margin-bottom: 30px; font-size: 1.1rem; }
 
+/* RESTORED PACK SELECTOR */
 .pack-selector { margin-bottom: 30px; }
 .selector-label { font-weight: bold; display: block; margin-bottom: 10px; font-family: 'Oswald'; }
 .pack-options { display: flex; gap: 15px; }
@@ -76,7 +77,12 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     flex: 1; background: transparent; border: 3px solid var(--brown-dark); padding: 15px;
     border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: center;
 }
-.pack-btn.active { background: var(--brown-dark); color: var(--cream-bg); }
+.pack-btn.active { background-color: var(--brown-dark); color: var(--cream-bg); border-color: var(--brown-dark); }
+.pack-btn:hover { border-color: var(--orange-accent); }
+.pack-size { display: block; font-family: 'Oswald'; font-weight: bold; font-size: 1.2rem; }
+.pack-price { display: block; font-size: 1rem; opacity: 0.9; }
+
+/* Coming Soon Button */
 .btn-coming-soon {
     width: 100%; text-align: center; margin-top: 10px;
     background-color: #95a5a6; color: var(--white);
@@ -193,17 +199,17 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 20000; justify-content: center; align-items: center; }
 .modal-content { background-color: white; width: 90%; max-width: 800px; padding: 20px; border-radius: 10px; position: relative; }
 
-/* --- CLOSE BUTTON (White Circle) --- */
+/* --- FLOATING CLOSE BUTTON (TOP RIGHT) --- */
 .close-modal {
-    position: absolute;
-    top: 15px; right: 15px; /* Positioned in corner */
-    width: 40px; height: 40px; /* Fixed size */
-    background-color: white; /* White "Border" effect */
-    border-radius: 50%; /* Circle */
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px; font-weight: bold; color: #333;
-    cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    z-index: 20002; transition: all 0.2s ease;
+    position: fixed; /* Fixed to screen */
+    top: 30px; right: 40px; /* Far from the map box */
+    font-size: 50px; font-weight: bold; 
+    color: white; /* White X */
+    background: none; /* No circle */
+    box-shadow: none; 
+    cursor: pointer; z-index: 20002;
+    transition: transform 0.2s;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Shadow for visibility */
 }
 .close-modal:hover { transform: scale(1.1); color: #e74c3c; }
 
