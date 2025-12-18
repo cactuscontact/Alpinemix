@@ -60,6 +60,7 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 /* --- SHOP --- */
 .shop-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; text-align: left; align-items: center; }
 .shop-images { flex: 1; min-width: 300px; max-width: 500px; display: flex; justify-content: center; }
+/* UPDATED TRANSLATE X TO -130px */
 .dual-shop-img {
     width: 100%; height: auto; object-fit: cover;
     border-radius: 20px; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
@@ -69,7 +70,7 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 .product-title { font-size: 2.5rem; color: var(--orange-accent); margin-bottom: 10px; }
 .product-desc { margin-bottom: 30px; font-size: 1.1rem; }
 
-/* Pack Selector (Restored) */
+/* Pack Selector */
 .pack-selector { margin-bottom: 30px; }
 .selector-label { font-weight: bold; display: block; margin-bottom: 10px; font-family: 'Oswald'; }
 .pack-options { display: flex; gap: 15px; }
@@ -77,6 +78,7 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     flex: 1; background: transparent; border: 3px solid var(--brown-dark); padding: 15px;
     border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: center;
 }
+/* Active State for Buttons */
 .pack-btn.active { 
     background-color: var(--brown-dark); 
     color: var(--cream-bg); 
@@ -205,23 +207,17 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 20000; justify-content: center; align-items: center; }
 .modal-content { background-color: white; width: 90%; max-width: 800px; padding: 20px; border-radius: 10px; position: relative; }
 
-/* FLOATING X CLOSE BUTTON (Top Right, Far) */
+/* FLOATING X CLOSE BUTTON */
 .close-modal {
-    position: fixed; /* Fixed to screen, not content */
-    top: 40px; right: 50px; 
-    font-size: 60px; font-weight: bold; 
-    color: white; /* Clean white */
-    background: none; 
-    box-shadow: none; 
-    cursor: pointer; z-index: 20002;
-    transition: transform 0.2s ease;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Shadow to see it over map/white */
+    position: fixed; top: 40px; right: 50px; font-size: 60px; font-weight: bold; color: white; background: none; box-shadow: none; cursor: pointer; z-index: 20002; transition: transform 0.2s ease; text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 .close-modal:hover { transform: scale(1.1); color: #e74c3c; }
 
 #leaflet-map-container { height: 400px; width: 100%; border-radius: 8px; border: 2px solid var(--brown-dark); }
 
 /* --- CART MODAL SPECIFIC --- */
+/* NEW: Bigger Cart Modal */
+.cart-content { max-width: 1000px; padding: 40px; }
 .cart-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
 .cart-item-img { width: 60px; height: auto; border-radius: 8px; border: 1px solid #ddd; }
 .cart-item-details h4 { margin: 0; font-size: 1.1rem; color: var(--brown-dark); }
@@ -245,4 +241,5 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
     .hero-title-img { transform: none; width: 90%; }
     .elevation-container, .section-mountain-bg, .contact-illustrations { display: none; }
     .close-modal { top: 20px; right: 20px; font-size: 40px; }
+    .dual-shop-img { transform: none; } /* Reset shift on mobile so it doesn't go off-screen */
 }
