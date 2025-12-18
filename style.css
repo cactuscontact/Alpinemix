@@ -57,13 +57,22 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     display: inline-block; border-bottom: 4px solid var(--orange-accent);
 }
 
-/* --- SHOP --- */
+/* --- SHOP (UPDATED FOR SINGLE PHOTO) --- */
 .shop-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; text-align: left; align-items: center; }
-.shop-images { flex: 1; min-width: 300px; max-width: 700px; display: flex; justify-content: center; gap: 0; }
+
+/* Changed max-width from 700px to 500px for better balance with a single image */
+.shop-images { flex: 1; min-width: 300px; max-width: 500px; display: flex; justify-content: center; }
+
 .dual-shop-img {
-    width: 50%; height: auto; aspect-ratio: 4/5; object-fit: cover;
+    width: 100%; /* Changed from 50% to 100% */
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px; /* Added rounded corners */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2); /* Added shadow for depth */
 }
+
 .shop-details { flex: 1; min-width: 300px; max-width: 500px; }
+/* ... rest of CSS remains the same ... */
 .product-title { font-size: 2.5rem; color: var(--orange-accent); margin-bottom: 10px; }
 .product-desc { margin-bottom: 30px; font-size: 1.1rem; }
 
@@ -215,3 +224,4 @@ footer { background-color: #2a1d17; color: #888; padding: 20px; text-align: cent
     .hero-title-img { transform: none; width: 90%; }
     .elevation-container, .section-mountain-bg, .contact-illustrations { display: none; }
 }
+
